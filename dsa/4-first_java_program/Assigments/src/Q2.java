@@ -5,7 +5,7 @@ public class Q2 {
 //    2. Take name as input and print a greeting message for that particular name.
         Scanner input = new Scanner(System.in);
         System.out.print("plz enter your name :");
-        String name = input.next();
+        String name = input.next("plz enter your name :");
         System.out.print("hii " + name + " you are wellcome in are terminal ");
 
     }
