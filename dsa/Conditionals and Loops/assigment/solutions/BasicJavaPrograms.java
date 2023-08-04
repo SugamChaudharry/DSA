@@ -28,7 +28,8 @@ public class BasicJavaPrograms {
                     'q' for Volume Of Sphere
                     'r' for Volume Of Pyramid
                     's' for Curved Surface Area Of Cylinder
-                    't' for Total Surface Area Of Cube""");
+                    't' for Total Surface Area Of Cube
+                    'u' for Fibonacci Series In Java Programs""");
 
             choice = input.next().charAt(0);
 
@@ -214,6 +215,18 @@ public class BasicJavaPrograms {
                     double sideLength = input.nextDouble();
                     double totalSurfaceAreaOfCube = 6 * sideLength * sideLength;
                     System.out.println("Total Surface Area of Cube: " + totalSurfaceAreaOfCube);
+                }
+                // Fibonacci Series In Java Programs
+                case 'u' -> {
+                    int n = input.nextInt();
+                    int a = 0;
+                    int b = 1;
+                    System.out.println(a);
+                    System.out.println(b);
+                    int c;
+                    for (int run = 2; run != n; run += 1, a = b, b = c ) {
+                        c = a + b;
+                        System.out.print(c + ",");}
                 }
                 default -> System.out.println("Invalid choice.");
             }
