@@ -1,18 +1,20 @@
 #include <stdio.h>
 int main(){
-    int n , val , flag;
+    int n , val;
     char want;
 
 do
 {   
+    int flag =0;
     printf("Enter length of array : ");
     scanf("%d",&n);
     int Arr[n];
+    printf("Enter values of array \n");
     for (int i = 0; i < n; i++)
     {
         scanf("%d",&Arr[i]);
     }
-    printf("Enter value of array \n");
+    printf("Enter value you want to check \n");
     scanf("%d",&val);
     for (int i = 0; i < n; i++)
     {
@@ -22,12 +24,13 @@ do
             flag++;
         }        
     }
+
     if (flag==0)
     {
         printf("%d is not in a array \n\n",val);
     }
-    
-    
+
+
     printf("Arr[%d]= [" ,n );
     for (int i = 0; i < n; i++){
 
@@ -43,6 +46,6 @@ do
     }
     printf("\n do you want to repeat (y/n) : ");
     scanf(" %c", &want);
-} while (want=='y');
-    
+} while (want=='y'); 
+
 }
