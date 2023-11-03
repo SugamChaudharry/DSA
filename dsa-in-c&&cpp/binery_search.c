@@ -44,7 +44,7 @@ int binearySearch(int n , int Arr[], int low, int high, int val, char order)
 
 int main()
 {
-    int n, val , invalide;
+    int n, val;
     char want, order;
 
     do
@@ -57,26 +57,26 @@ int main()
         int forCheck[n];
 
         printf("Enter order ascending/descending (a/d) : ");
-        scanf("%c", &order);
+        scanf(" %c", &order);
+
         if (order == 'a')
         {
             printf("Enter values of array in ascending order \n");
+            
         }
         else if (order == 'd')
         {
             printf("Enter values of array in descending order \n");
+            
         }
         else{
-            printf("enter valide order \n");
-            invalide++;
+            printf("enter valide order re enter it \n");
+            scanf(" %c", &order);
         }
-
-
-        if (invalide>0)
-            printf("enter valide order");
         //  taking value's in array with order
-        if (invalide==0)
+        if (order=='a'||order=='d')
         {
+        
             printf("Enter value for index %d: ", 0);
             scanf("%d", &Arr[0]);
             for (int i = 0; i < n - 1; i++)
@@ -84,15 +84,15 @@ int main()
                 printf("Enter value for index %d: ", i + 1);
                 scanf("%d", &forCheck[i]);
 
-                if (order == 'a' || 'A')
+                if (order == 'a')
                 {
                     while (!(Arr[i] < forCheck[i]))
                     {
-                        printf("plz enter grater no then %d", Arr[i]);
+                        printf("plz enter grater no then %d : ", Arr[i]);
                         scanf("%d", &forCheck[i]);
                     }
                 }
-                else if (order == 'd' || 'D')
+                else if (order == 'd')
                 {
                     while (!(Arr[i] > forCheck[i]))
                     {
@@ -124,6 +124,8 @@ int main()
                     printf("]");
                 }
             }
+        }else{
+            printf("again invalid try next time");
         }
         printf("\n do you want to repeat (y/n) : ");
         scanf(" %c", &want);
