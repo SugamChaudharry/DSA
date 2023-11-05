@@ -1,46 +1,37 @@
 #include <stdio.h>
 
-    //  binary search
-    /*
-           0 1 2 3 4 5 6 7 8 ----> index's
-        a=[1,2,3,4,5,6,7,8,9]
-        val = value user want to find
-        low Value = 0 index
-        high value = n
-        mid value = (low-high)/2
-
-        condtion1= mid < val --> mid = (low+(mid-1))/2
-        condtion1= mid > val --> mid = ((mid+1)+(high))/2
-        condtion1= mid = val --> find
-    */
-int binearySearch(int n , int Arr[], int low, int high, int val, char order)
+int binearySearch(int n, int Arr[], char order )
 {
+    int first = 0,
+    last = n - 1,
+    i = 0, val;
 
-    printf("Enter value you want to check \n");
-    scanf("%d", &val);
+        printf("Enter value you want to check \n");
+        scanf("%d", &val);
 
-    while ((order == 'a' || order == 'A') ? (low <= high) : (low >= high))
+        while (i < 8)
     {
-        int mid = (low + high) / 2;
-        if (val < Arr[mid])
+
+        int mid = (first + last) / 2;
+        if (val > Arr[mid])
         {
-            high = mid - 1;
+            (order == 'a') ? first = mid + 1 : (order == 'd') ? last = mid - 1
+                                                        : printf("error");
         }
-        else if (val > Arr[mid])
+        else if (val < Arr[mid])
         {
-            low = mid + 1;
+            (order == 'a') ? last = mid - 1 : (order == 'd') ? first = mid + 1
+                                                        : printf("error");
         }
         else if (val == Arr[mid])
         {
-            printf("%d is in %d position of an array", val, mid);
+            printf("%d is in %d position of an array \n", val, mid + 1);
             return mid;
         }
-
+        i++;
     }
-    printf("%d is not in an array", val);
+    printf("%d is not in an array \n", val);
 }
-
-
 
 int main()
 {
@@ -62,26 +53,25 @@ int main()
         if (order == 'a')
         {
             printf("Enter values of array in ascending order \n");
-            
         }
         else if (order == 'd')
         {
             printf("Enter values of array in descending order \n");
-            
         }
-        else{
+        else
+        {
             printf("enter valide order re enter it \n");
             scanf(" %c", &order);
         }
         //  taking value's in array with order
-        if (order=='a'||order=='d')
+        if (order == 'a' || order == 'd')
         {
-        
-            printf("Enter value for index %d: ", 0);
+
+            printf("Enter value  %d: ", 0+1);
             scanf("%d", &Arr[0]);
             for (int i = 0; i < n - 1; i++)
             {
-                printf("Enter value for index %d: ", i + 1);
+                printf("Enter value %d: ", i + 1+1);
                 scanf("%d", &forCheck[i]);
 
                 if (order == 'a')
@@ -96,20 +86,18 @@ int main()
                 {
                     while (!(Arr[i] > forCheck[i]))
                     {
-                        printf("plz enter less no then %d", Arr[i]);
+                        printf("plz enter less no then %d : ", Arr[i]);
                         scanf("%d", &forCheck[i]);
                     }
                 }
                 Arr[i + 1] = forCheck[i];
             }
 
-            int low, high;
-            (order == 'a' || order == 'A') ? (low = 0, high = n - 1) : (order == 'd' || order == 'D') ? (low = n - 1, high = 0)
-                                                                                                      : printf("error in order");
 
-            int result = binearySearch(n, Arr, low, high, val, order);
+                int result = binearySearch(n, Arr, order);
+           
 
-            printf("Arr[%d]= [", n);
+            printf("Array[%d]= [", n);
             for (int i = 0; i < n; i++)
             {
 
@@ -124,7 +112,9 @@ int main()
                     printf("]");
                 }
             }
-        }else{
+        }
+        else
+        {
             printf("again invalid try next time");
         }
         printf("\n do you want to repeat (y/n) : ");
