@@ -1,15 +1,15 @@
 #include <stdio.h>
 
-int binearySearch(int n, int Arr[], char order )
+int binearySearch(int length, int Arr[], char order)
 {
     int first = 0,
-    last = n - 1,
-    i = 0, val;
+        last = length - 1,
+        i = 0, val;
 
-        printf("Enter value you want to check \n");
-        scanf("%d", &val);
+    printf("Enter value you want to check \n");
+    scanf("%d", &val);
 
-        while (i < 8)
+    while (i < length)
     {
 
         int mid = (first + last) / 2;
@@ -30,22 +30,22 @@ int binearySearch(int n, int Arr[], char order )
         }
         i++;
     }
-    printf("%d is not in an array \n", val);
+        printf("%d is not in an array \n", val);
 }
 
 int main()
 {
-    int n, val;
+    int length, val;
     char want, order;
 
     do
     {
 
         printf("Enter length of array : ");
-        scanf("%d", &n);
+        scanf("%d", &length);
 
-        int Arr[n];
-        int forCheck[n];
+        int Arr[length];
+        int forCheck[length];
 
         printf("Enter order ascending/descending (a/d) : ");
         scanf(" %c", &order);
@@ -69,7 +69,7 @@ int main()
 
             printf("Enter value  %d: ", 0+1);
             scanf("%d", &Arr[0]);
-            for (int i = 0; i < n - 1; i++)
+            for (int i = 0; i < length - 1; i++)
             {
                 printf("Enter value %d: ", i + 1+1);
                 scanf("%d", &forCheck[i]);
@@ -94,16 +94,16 @@ int main()
             }
 
 
-                int result = binearySearch(n, Arr, order);
+                int result = binearySearch(length, Arr, order);
            
 
-            printf("Array[%d]= [", n);
-            for (int i = 0; i < n; i++)
+            printf("Array[%d]= [", length);
+            for (int i = 0; i < length; i++)
             {
 
                 printf(" %d ", Arr[i]);
 
-                if (i < n - 1)
+                if (i < length - 1)
                 {
                     printf(",");
                 }
