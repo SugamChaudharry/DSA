@@ -12,7 +12,6 @@ int insertion(int a[], int l, int e, int p)
         {
             a[l - i + 1] = a[l - i];
             a[p] = e;
-            printf("\n a[p] = %d \n",a[p]);
             break;
         }
     }
