@@ -1,5 +1,5 @@
 let arr = [9,8,7,6,5,4,3,2,1,0];
-console.log("befour : ", arr +  "");
+console.log("before : ", "[" + arr +  "]");
 function merge_sort(arr) {
   if (arr.length <= 1) return;
 
@@ -35,4 +35,4 @@ function merge(leftarr, rightarr, arr) {
 }
 
 merge_sort(arr);
-console.log("after  : ",arr + "")
+console.log("after  : ","[" + arr +  "]")
