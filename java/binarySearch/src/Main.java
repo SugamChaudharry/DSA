@@ -23,9 +23,9 @@ public class Main {
             int mid = start + (end - start) / 2;
 
             if (ar[mid] > target){
-                end = mid - 1;
-            } else if (ar[mid] < target) {
                 start = mid + 1;
+            } else if (ar[mid] < target) {
+                end = mid - 1;
             }else {
                 return mid;
             }
