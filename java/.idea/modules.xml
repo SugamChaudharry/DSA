@@ -6,13 +6,19 @@
       <module fileurl="file://$PROJECT_DIR$/assigment1/assigment1.iml" filepath="$PROJECT_DIR$/assigment1/assigment1.iml" />
       <module fileurl="file://$PROJECT_DIR$/assignment2/assignment2.iml" filepath="$PROJECT_DIR$/assignment2/assignment2.iml" />
       <module fileurl="file://$PROJECT_DIR$/binarySearch/binarySearch.iml" filepath="$PROJECT_DIR$/binarySearch/binarySearch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/inBuiltStackAndQueue/inBuiltStackAndQueue.iml" filepath="$PROJECT_DIR$/inBuiltStackAndQueue/inBuiltStackAndQueue.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/java.iml" filepath="$PROJECT_DIR$/.idea/java.iml" />
       <module fileurl="file://$PROJECT_DIR$/learning/learning.iml" filepath="$PROJECT_DIR$/learning/learning.iml" />
       <module fileurl="file://$PROJECT_DIR$/linearSearch/linearSearch.iml" filepath="$PROJECT_DIR$/linearSearch/linearSearch.iml" />
+      <module fileurl="file://$PROJECT_DIR$/linkedlist/linkedlist.iml" filepath="$PROJECT_DIR$/linkedlist/linkedlist.iml" />
+      <module fileurl="file://$PROJECT_DIR$/oops/oops.iml" filepath="$PROJECT_DIR$/oops/oops.iml" />
       <module fileurl="file://$PROJECT_DIR$/recursion/part2/part2.iml" filepath="$PROJECT_DIR$/recursion/part2/part2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/linkedlist/question/question.iml" filepath="$PROJECT_DIR$/linkedlist/question/question.iml" />
       <module fileurl="file://$PROJECT_DIR$/arrays/code/questions/questions.iml" filepath="$PROJECT_DIR$/arrays/code/questions/questions.iml" />
+      <module fileurl="file://$PROJECT_DIR$/queue/queue.iml" filepath="$PROJECT_DIR$/queue/queue.iml" />
       <module fileurl="file://$PROJECT_DIR$/recursion/recursion.iml" filepath="$PROJECT_DIR$/recursion/recursion.iml" />
       <module fileurl="file://$PROJECT_DIR$/sorting/sorting.iml" filepath="$PROJECT_DIR$/sorting/sorting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/stack/stack.iml" filepath="$PROJECT_DIR$/stack/stack.iml" />
     </modules>
   </component>
 </project>
