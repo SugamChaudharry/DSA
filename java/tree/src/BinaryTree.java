@@ -1,3 +1,5 @@
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class BinaryTree {
@@ -103,7 +105,6 @@ public class BinaryTree {
     public void postOrder(){
         postOrder(root);
     }
-
     private void postOrder(Node node){
         if(node == null){
             return;
@@ -111,5 +112,21 @@ public class BinaryTree {
         postOrder(node.left);
         postOrder(node.right);
         System.out.println(node.val + " ");
+    }
+
+    public void BFS(){
+        LinkedList<Node> arr = new LinkedList<Node>();
+        BFS(arr,this.root, -1);
+    }
+
+    private void BFS(LinkedList<Node> arr, Node node, int index) {
+        System.out.print(node.val + "--> ");
+        index++;
+        if (node.left != null) arr.add(node.left);
+        if (node.right != null) arr.add(node.right);
+        if(index >= arr.size()){
+            return;
+        }
+        BFS(arr, arr.get(index), index);
     }
 }

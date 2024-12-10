@@ -1,10 +1,14 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
-//        BinaryTree tree = new BinaryTree();
-//        Scanner input = new Scanner(System.in);
-//        tree.populate(input);
+        BinaryTree tree = new BinaryTree();
+        Scanner input = new Scanner(System.in);
+        tree.populate(input);
 //        tree.display();
-//        tree.prettyDisplay();
+        tree.prettyDisplay();
+        tree.BFS();
+
 //        BinarySearchTree t = new BinarySearchTree();
 //        t.insert(6);
 //        t.insert(3);
@@ -26,11 +30,16 @@ public class Main {
 //        System.out.println("=====================================================");
 //        t.prettyDisplay();
 
-        int[] arr = {3, 8, 6, 7, -2, -8, 4, 9};
-        Segment tree = new Segment(arr);
-         tree.display();
+//        int[] arr = {3, 8, 6, 7, -2, -8, 4, 9};
+//        Segment tree = new Segment(arr);
+//         tree.prettyDisplay();
+//        System.out.println("====================");
+//        System.out.println(tree.query(2,5));
+//        tree.update(2,4444);
+//        System.out.println("====================");
+//        tree.prettyDisplay();
 
-        System.out.println(tree.query(1, 6));
+//        System.out.println(tree.query(1, 6));
 
     }
 }

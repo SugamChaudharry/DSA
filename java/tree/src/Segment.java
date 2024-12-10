@@ -18,74 +18,57 @@ public class Segment {
     }
 
     private Node constructTree(int[] arr, int start, int end) {
-        if(start == end) {
-            // leaf node
-            Node leaf = new Node(start, end);
-            leaf.data = arr[start];
-            return leaf;
+        if(start == end){
+            Node node = new Node(start,end);
+            node.data = arr[start];
+            return node;
         }
 
-        // create new node with index you are at
-        Node node = new Node(start, end);
-
+        Node node = new Node(start,end);
         int mid = (start + end) / 2;
-
-        node.left = this.constructTree(arr, start, mid);
-        node.right = this.constructTree(arr, mid + 1, end);
+        node.left = constructTree(arr, start, mid);
+        node.right = constructTree(arr, mid+1, end);
 
         node.data = node.left.data + node.right.data;
+
         return node;
     }
-    public void display() {
-        display(this.root);
-    }
-    private void display(Node node) {
-        String str = "";
-
-        if(node.left != null) {
-            str = str + "Interval=[" + node.left.startInterval + "-" + node.left.endInterval + "] and data: " + node.left.data + " => ";
-        } else {
-            str = str + "No left child";
-        }
-
-        // for current node
-        str = str + "Interval=[" + node.startInterval + "-" + node.endInterval + "] and data: " + node.data + " <= ";
-
-        if(node.right != null) {
-            str = str + "Interval=[" + node.right.startInterval + "-" + node.right.endInterval + "] and data: " + node.right.data;
-        } else {
-            str = str + "No right child";
-        }
-
-        System.out.println(str + '\n');
-
-        // call recursion
-        if(node.left != null) {
-            display(node.left);
-        }
-
-        if(node.right != null) {
-            display(node.right);
-        }
+    public void prettyDisplay() {
+        prettyDisplay(root, 0);
     }
 
-    // query
-    public int query(int qsi, int qei) {
+    private void prettyDisplay(Node node, int level) {
+        if (node == null) {
+            return;
+        }
+
+        prettyDisplay(node.right, level + 1);
+
+        if (level != 0) {
+            for (int i = 0; i < level - 1; i++) {
+                System.out.print("|\t\t");
+            }
+            System.out.println("|------->" + node.data + " [ "+ node.startInterval + ", "+ node.endInterval +" ]");
+        } else {
+            System.out.println(node.data+ " [ "+ node.startInterval + ", "+ node.endInterval +" ]");
+        }
+        prettyDisplay(node.left, level + 1);
+    }
+
+    public int query (int qsi, int qei){
         return this.query(this.root, qsi, qei);
     }
-    private int query(Node node, int qsi, int qei) {
-        if(node.startInterval >= qsi && node.endInterval <= qei) {
-            // node is completely lying inside query
+
+    private int query(Node node, int qsi, int qei){
+        if(node.startInterval >= qsi && node.endInterval <= qei){
+            // completely inside query;
             return node.data;
-        } else if (node.startInterval > qei || node.endInterval < qsi) {
-            // completely outside
+        }else if (node.startInterval > qei || node.endInterval < qsi) {
             return 0;
-        } else {
+        }else {
             return this.query(node.left, qsi, qei) + this.query(node.right, qsi, qei);
         }
     }
-
-    // update
     public void update(int index, int value) {
         this.root.data = update(this.root, index, value);
     }
@@ -103,5 +86,4 @@ public class Segment {
         }
         return node.data;
     }
-
 }

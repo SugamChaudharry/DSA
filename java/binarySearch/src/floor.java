@@ -24,6 +24,7 @@ public class floor {
             System.out.println(Arrays.toString(arr));
             System.out.print(" ");
             int ind = binarySearch(arr,target);
+            System.out.println(ind);
             char[] sb = {'^','|'};
             for (int i = 0; i <= 2; i++) {
                 for (int j = 0; j <= ind; j++) {
@@ -64,7 +65,7 @@ public class floor {
 
         while (start <= end){
             mid = start + (end - start) / 2;
-
+            System.out.println(mid);
             if (target == arr[mid]) {
                 return mid;
             }
